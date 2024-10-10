@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Smile</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            canvas{
+                border: 1px solid #000;
+                background-color: rgb(136, 241, 107);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="Smile" width="400" height="450"></canvas>
+
+        <script>
+            var canvas=document.getElementById('Smile');
+            var ctx=canvas.getContext('2d');
+
+            //background
+            ctx.beginPath();
+            ctx.arc(200,200,150,0,Math.PI*2);
+            ctx.closePath();
+            ctx.fillStyle="yellow";
+            ctx.fill();
+            ctx.stroke();
+            
+            //eyes
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(150, 150, 10, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(250, 150, 10, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+
+            //nose
+            ctx.strokeStyle="black";
+            ctx.beginPath();
+            ctx.moveTo(200,180);
+            ctx.lineTo(200,220);
+            ctx.closePath();
+            ctx.stroke();
+
+            //mouth
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(155, 240);
+            ctx.quadraticCurveTo(200, 310, 245, 240);
+            ctx.stroke();
+
+            //text
+            ctx.font="26px Arial";
+            ctx.textAlign="center";
+            ctx.fillStyle="green";
+            ctx.fillText("The Canvas brought me to life!",200,400);
+        </script>
+    </body>
+</html>
